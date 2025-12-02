@@ -1,235 +1,152 @@
-
-# 📘 Zen Reader – Distraction-Free Reader Mode with AI Text-to-Speech
-
-Zen Reader is a privacy-first browser extension that transforms cluttered web pages into clean, distraction-free reading experiences with powerful built-in text-to-speech and **AI-powered content extraction using Google Gemini**. It works across Chrome, Edge, Firefox, and all modern browsers supporting Manifest V3.
-
-![Zen Reader Banner](extension/icons/icon128.png)
-
----
-
-## ✨ Description
-
-Zen Reader removes ads, sidebars, popups, and visual clutter from web pages so you can focus purely on the content that matters.
-
-It uses **Google Gemini AI (client-side via API)** to extract high-quality readable content when available, and automatically falls back to **Mozilla Readability.js** for offline use. The extension also features a rich **text-to-speech system** with word highlighting, adjustable speed, and customizable voices.
-
-Zen Reader is built with a **privacy-first architecture**:
-- ✅ No backend servers  
-- ✅ No databases  
-- ✅ No user tracking  
-- ✅ User-controlled AI API key  
-- ✅ Offline fallback supported  
-
----
-
-## 🚀 Live Demo
-
-https://chirag127.github.io/Zen-Reader-Browser-Extension/
-
----
-
-## 🛠️ Tech Stack / Tools Used
-
-### Frontend (100% Client-Side)
-
-- HTML5, CSS3, JavaScript (Vanilla)
-- Chrome Extension API
-- Firefox WebExtension API
-- Manifest V3
-- Google Gemini API (client-side)
-- Mozilla Readability.js (offline fallback)
-- Web Speech API (native Text-to-Speech)
-- IndexedDB / Browser Storage APIs (local preferences)
-
-✅ No Node.js  
-✅ No Express  
-✅ No servers  
-✅ No databases  
-
----
-
-## 🧪 Features
-
-- **AI-Powered Content Extraction** using Google Gemini  
-- **Offline Fallback Extraction** using Mozilla Readability.js  
-- **Clean Reader UI** with only the article title, text, and images  
-- **Light & Dark Mode**  
-- **Font Customization** (family & size)  
-- **Preserved Page Links**  
-- **Instant Toggle** back to original webpage  
-- **Text-to-Speech with Word Highlighting**  
-- **Adjustable Reading Speed** (0.5×–4×)  
-- **Floating Playback Controls**  
-- **Read from Any Text Selection**  
-- **Right-Click Context Menu Support**  
-- **Smart Auto-Scrolling While Reading**  
-- **Customizable Voice & Pitch**  
-- **Local Settings Storage**  
-- **Zero Telemetry & Zero Tracking**
-
----
-
-## 🔑 Gemini API Setup (Required for AI Extraction)
-
-Zen Reader uses **Google Gemini directly from your browser**.
-
-### Steps:
-
-1. Go to **Google AI Studio**
-2. Create a **Gemini API Key**
-3. Open the **Zen Reader Settings Panel**
-4. Paste your API key into **Gemini API Key**
-5. Save settings
-
-✅ The API key is stored **only in your browser storage**  
-✅ The key is **never sent to any server you control**  
-✅ All Gemini requests are made **directly from your browser to Google**
-
-If no API key is provided or if the user is offline, Zen Reader automatically switches to **Readability.js**.
-
----
-
-## 💾 Installation Instructions
-
-### ✅ Chrome / Edge
-
-1. Clone or download this repository  
-2. Open:
-```
-
-chrome://extensions/
-
-```
-or
-```
-
-edge://extensions/
-
-```
-3. Enable **Developer Mode**
-4. Click **Load Unpacked**
-5. Select the `extension` folder
-6. Zen Reader will appear in your browser toolbar
-
----
-
-### ✅ Firefox
-
-1. Clone or download this repository  
-2. Open:
-```
-
-about:debugging#/runtime/this-firefox
-
-```
-3. Click **Load Temporary Add-on**
-4. Select any file inside the `extension` directory
-5. Zen Reader will be activated
-
----
-
-## 🔧 Usage
-
-### ✅ Basic Reader Mode
-
-1. Open any article or blog page  
-2. Click the **Zen Reader icon** in your browser toolbar  
-3. Zen Reader will:
-- First try **Gemini AI extraction**
-- If unavailable → auto-fallback to **Readability.js**
-4. The page transforms into a clean reading layout  
-5. Use the controls to:
-- Toggle Light/Dark mode  
-- Change font size & family  
-- Return to the original page  
-
----
-
-### 🔊 Text-to-Speech Usage
-
-1. Click the **speaker icon** in the Zen Reader controls  
-2. Control playback with:
-- Play / Pause  
-- Stop  
-- Speed (0.5×–4×)  
-- Voice selection  
-- Pitch control  
-3. You can also:
-- Select any text  
-- Right-click  
-- Choose **Read Selection Aloud**
-
----
-
-## 🧠 How Zen Reader Works (Hybrid AI + Offline)
-
-1. The page DOM is captured locally
-2. If online and API key exists:
-- Content is sent to **Gemini for intelligent extraction**
-3. If offline or API key missing:
-- **Mozilla Readability.js** extracts the content locally
-4. Clean text is rendered inside Zen Reader
-5. Text-to-Speech runs using the **native browser voice engine**
-
-This ensures:
-- ✅ Best-quality extraction with AI
-- ✅ Offline reliability
-- ✅ Zero backend dependency
-- ✅ Full privacy control
-
----
-
-## 📂 Project Structure
-
-```
-
-extension/
-├── icons/                   # Extension icons
-├── reader/                  # Reader Mode UI
-│   ├── reader.html          # Reader layout
-│   ├── reader.css           # Reader styles
-│   └── reader.js            # Reader logic
-├── background.js            # Extension runtime
-├── content.js               # Page capture & fallback extraction
-├── extension.js             # Shared helper utilities
-├── manifest.json            # Manifest V3 config
-├── popup.html               # Popup UI
-└── popup.js                 # Popup logic
-
-```
-
----
-
-## 🔐 Privacy & Security
-
-- ✅ No backend servers  
-- ✅ No telemetry  
-- ✅ No tracking  
-- ✅ No databases  
-- ✅ API key stored only locally  
-- ✅ No third-party analytics  
-- ✅ Optional offline mode  
-- ✅ User maintains full control
-
----
-
-## 📜 License
-
-MIT License
-
----
-
-## 🌟 Vision
-
-Zen Reader exists to restore peace to the modern web.  
-No noise. No clutter. Just content.
-
-AI-powered when you want it.  
-Offline-friendly when you need it.  
-Private always.
-
----
-
-## ⭐ Support the Project
-
-If Zen Reader improves your daily reading experience, please consider giving the project a ⭐ on GitHub. Your support helps the project grow and stay maintained.
+# ZenRead: AI-Powered Distraction-Free Reader Browser Extension
+
+> The ultimate tool for focused, intelligent content consumption on the web. Leverage Gemini AI to transform cluttered pages into clean, summarized, and acoustically accessible content streams.
+
+<p align="center">
+  <a href="https://github.com/chirag127/ZenRead-AI-Powered-Distraction-Free-Reader-Browser-Extension/actions/workflows/ci.yml" target="_blank">
+    <img alt="Build Status" src="https://img.shields.io/github/actions/workflow/status/chirag127/ZenRead-AI-Powered-Distraction-Free-Reader-Browser-Extension/ci.yml?branch=main&style=flat-square&label=CI%20Build" />
+  </a>
+  <a href="https://github.com/chirag127/ZenRead-AI-Powered-Distraction-Free-Reader-Browser-Extension/blob/main/LICENSE" target="_blank">
+    <img alt="License" src="https://img.shields.io/badge/License-CC%20BY--NC%204.0-blue.svg?style=flat-square" />
+  </a>
+  <a href="https://github.com/chirag127/ZenRead-AI-Powered-Distraction-Free-Reader-Browser-Extension" target="_blank">
+    <img alt="Stars" src="https://img.shields.io/github/stars/chirag127/ZenRead-AI-Powered-Distraction-Free-Reader-Browser-Extension?style=flat-square&label=Stars&color=yellow" />
+  </a>
+  <img alt="Tech Stack" src="https://img.shields.io/badge/Stack-WXT%20%7C%20JS%20%7C%20AI-209E61.svg?style=flat-square" />
+  <img alt="Linting" src="https://img.shields.io/badge/Linter-Biome-60A5FA.svg?style=flat-square" />
+  <a href="https://www.codecov.io/gh/chirag127/ZenRead-AI-Powered-Distraction-Free-Reader-Browser-Extension" target="_blank">
+    <img alt="Coverage" src="https://img.shields.io/codecov/c/github/chirag127/ZenRead-AI-Powered-Distraction-Free-Reader-Browser-Extension?style=flat-square&token=YOUR_TOKEN_HERE" />
+  </a>
+</p>
+
+***
+
+<p align="center">
+  <a href="https://github.com/chirag127/ZenRead-AI-Powered-Distraction-Free-Reader-Browser-Extension">
+    <img src="https://img.shields.io/badge/⭐%20Star%20this%20Repo-Support%20Open%20Source-ff69b4.svg?style=for-the-badge&logo=github" alt="Star this Repository" />
+  </a>
+</p>
+
+ZenRead transforms cluttered web pages into clean, highly readable, and acoustically accessible content streams. Leveraging the power of Google Gemini AI, it not only removes distractions but also intelligently summarizes, translates, and processes text, ensuring absolute focus and maximum comprehension.
+
+## 🚀 Key Features
+
+*   **One-Click Zen Mode:** Instantaneously strips away advertisements, pop-ups, and extraneous UI elements.
+*   **AI Contextual Summary:** Uses Gemini 1.5 Pro to generate a concise summary of the extracted article content.
+*   **Seamless Text-to-Speech (TTS):** High-quality, native voice synthesis for auditory learning.
+*   **Cross-Browser Compatibility:** Built using WXT for rapid deployment across Chrome, Firefox, and Edge.
+*   **Privacy-Focused:** Content processing happens locally where possible, with explicit AI consent.
+
+## 🏛️ Architecture Overview
+
+ZenRead utilizes the **Feature-Sliced Design (FSD)** methodology, which is ideal for isolating extension components (e.g., popup, content script, background service) into highly cohesive, domain-specific layers.
+
+mermaid
+graph TD
+    A[User Action: Click ZenRead Icon] --> B(Content Script: DOM Extraction);
+    B --> C{Background Service Worker};
+    C --> D(Module: Text Cleaning & Serialization);
+    C --> E(Module: Gemini AI API Integration);
+    E --> F(AI Summary & Processing);
+    F --> G(Module: State Management (e.g., Zustand/Chrome Storage));
+    G --> H(Popup/Sidebar UI Update);
+    C --> I(Module: TTS Synthesis & Playback);
+
+
+## 📖 Table of Contents
+
+1.  [🚀 Key Features](#-key-features)
+2.  [🏛️ Architecture Overview](#-architecture-overview)
+3.  [🤖 AI Agent Directives (System SSOT)](#-ai-agent-directives-system-ssot)
+4.  [💻 Development Setup](#-development-setup)
+5.  [📜 Scripts and Commands](#-scripts-and-commands)
+6.  [🌐 Principles & Standards](#-principles--standards)
+7.  [🤝 Contributing](#-contributing)
+8.  [© License](#-license)
+
+## 🤖 AI Agent Directives (System SSOT)
+
+<details>
+<summary>⚡ APEX LATE 2025 ENGINEERING STANDARDS & DIRECTIVES</summary>
+
+### Identity & Context
+This repository, `ZenRead-AI-Powered-Distraction-Free-Reader-Browser-Extension`, is a critical, privacy-focused browser extension utilizing JavaScript, the WXT framework, and Google Gemini APIs. All code generation and refactoring MUST adhere to maximum performance and minimal memory footprint, essential for browser extensions.
+
+### Apex Toolchain (2026 Standard)
+| Tool | Purpose | Directive |
+| :--- | :--- | :--- |
+| **WXT Framework** | Extension Scaffolding/Vite Integration | Utilize Manifest V3, optimize background service worker execution models. |
+| **Biome** | Linter/Formatter/JS Checker | Enforcement of absolute code style consistency (`biome check --apply`). |
+| **Vitest** | Unit & Integration Testing | Target 100% coverage on all content extraction and AI prompt modules. |
+| **TypeScript (Migration Path)** | Static Type Safety | All new modules MUST be written in strict TypeScript. Refactor legacy JS files incrementally. |
+| **Node.js (LTS)** | Runtime Environment | Use Node v20+ for development and CI/CD pipelines. |
+
+### Architectural Enforcement
+1.  **Feature-Sliced Design (FSD):** Strictly enforce FSD principles. Components must be atomic, reusable, and separated by scope (app/pages/widgets/features/entities/shared). No imports between features in a horizontal manner (Feature A importing from Feature B).
+2.  **SOLID & DRY:** Maximize modularity. The AI interaction layer (`src/features/ai-processing`) must be decoupled from the UI/Content Script layers via message passing.
+3.  **Content Script Isolation:** Content scripts must be lean, focusing only on DOM manipulation and extraction, delegating heavy computation (AI/TTS processing) to the Background Service Worker via Chrome Message Passing API.
+
+### Verification and Delivery
+| Command | Description | Purpose |
+| :--- | :--- | :--- |
+| `npm run build` | Generates distributable package. | MUST complete with zero warnings. |
+| `npm run lint:check` | Runs Biome checks. | MUST pass clean before any commit. |
+| `npm run test` | Executes Vitest unit tests. | Maintain minimum 95% line coverage. |
+| `npm run check:types` | Runs TSC compiler checks. | Ensures TypeScript integrity during JS refactoring. |
+
+</details>
+
+## 💻 Development Setup
+
+This project uses `npm` and the WXT framework for development.
+
+1.  **Prerequisites:** Ensure Node.js (v20+) is installed.
+2.  **Clone the Repository:**
+    bash
+    git clone https://github.com/chirag127/ZenRead-AI-Powered-Distraction-Free-Reader-Browser-Extension.git
+    cd ZenRead-AI-Powered-Distraction-Free-Reader-Browser-Extension
+    
+3.  **Install Dependencies:**
+    bash
+    npm install
+    
+4.  **Environment Variables:** Create a `.env` file in the root directory for your AI key.
+    
+    # Required for AI Summarization Feature
+    GEMINI_API_KEY="YOUR_GEMINI_KEY"
+    
+5.  **Start Development Mode:**
+    bash
+    npm run dev
+    # Loads the extension into the browser for hot-reloading.
+    
+
+## 📜 Scripts and Commands
+
+| Script | Command | Description |
+| :--- | :--- | :--- |
+| `dev` | `wxt:dev` | Starts the development server for hot module reloading. |
+| `build` | `wxt build` | Compiles the production-ready extension bundle. |
+| `lint` | `biome lint .` | Executes Biome linting checks. |
+| `format` | `biome format .` | Auto-formats code using Biome standards. |
+| `test` | `vitest` | Runs all unit and integration tests (coverage recommended). |
+| `clean` | `rm -rf .output && rm -rf node_modules` | Clears all built artifacts and modules. |
+
+## 🌐 Principles & Standards
+
+We strictly adhere to core architectural philosophies to ensure maintainability and scalability.
+
+*   **SOLID:** Single Responsibility Principle (especially critical for content scripts and background workers).
+*   **DRY (Don't Repeat Yourself):** All shared utilities (e.g., content cleaning algorithms) must reside in the FSD `shared` layer.
+*   **YAGNI (You Aren't Gonna Need It):** Features are implemented only when absolutely necessary, focusing on a minimal, high-utility product.
+*   **Performance First:** All DOM manipulations and data processing must be asynchronous and non-blocking.
+
+## 🤝 Contributing
+ZenRead is an open-source project managed under the Apex Standard 11 compliance mandate. Please review the following documents before submitting contributions:
+
+*   [CONTRIBUTING.md](.github/CONTRIBUTING.md) - Guidelines for code submission and architectural expectations.
+*   [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) - Our standards for respectful engagement.
+*   [SECURITY.md](.github/SECURITY.md) - Instructions for reporting vulnerabilities securely.
+
+## © License
+This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International Public License (CC BY-NC 4.0)**.
