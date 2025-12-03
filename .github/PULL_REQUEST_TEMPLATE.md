@@ -1,100 +1,47 @@
-# 🚀 Pull Request Template
+# Pull Request Checklist & Review Guide
 
-**Please follow these guidelines for your pull request.**
+This template ensures high-velocity, zero-defect integration. Please review and complete all relevant sections before submitting.
 
---- 
+---
 
-## 🎯 Goal
+## 🚀 Feature / Fix Summary
 
-Briefly describe the **main goal** of this pull request. What problem does it solve or what feature does it add?
+<!-- Briefly describe the scope of this Pull Request. What does it accomplish? -->
 
---- 
+**Related Issue(s):** (e.g., Closes #123, Fixes #456)
 
-## 📝 Description
+## ✅ Checklist (Developer)
 
-Provide a more **detailed explanation** of the changes. 
+*   [ ] **Architectural Alignment:** Does this adhere to the FSD/Modular Monolith principles (as defined in `AGENTS.md`)?
+*   [ ] **Code Style:** Have I run the linter/formatter (`npm run lint` or equivalent)?
+*   [ ] **Unit Tests:** Have I written/updated unit tests (`Vitest`/`Pytest`) for new or modified logic?
+*   [ ] **E2E Tests:** If user-facing changes, have I updated Playwright/Cypress scenarios?
+*   [ ] **Documentation:** Are relevant sections of `README.md` or inline comments updated?
+*   [ ] **Performance:** Have I considered potential performance impacts (especially regarding AI/TTS latency)?
+*   [ ] **Security:** Are all external API calls (Gemini) secured and validated? No hardcoded secrets?
 
-*   **What was changed?**
-*   **Why was it changed?**
-*   **How was it changed?** (High-level overview of the approach)
+## 🔬 Technical Deep Dive & Verification
 
---- 
+<!-- Provide context for the reviewer. What major changes were made? Why? -->
 
-## 🔗 Related Issues
+### Architecture/Pattern Applied
 
-Link any relevant issues using keywords like `fixes #123`, `closes #456`, `related to #789`.
+> **Example:** Refactored TTS module into its own dedicated feature slice to adhere to Feature-Sliced Design principles, isolating browser API interactions from core processing logic.
 
---- 
+### Testing Strategy
 
-## 🚀 Technical Overview (Agent Directives)
+<!-- Detail how you verified the change. If you skipped E2E tests for a reason, document it here. -->
 
-This section outlines the core principles and directives that guide development and testing, ensuring alignment with the Apex Technical Authority standards.
+## 📋 Reviewer Checklist (For Reviewer Only)
 
-<details>
-<summary>View Agent Directives</summary>
+*   [ ] **Correctness:** Does the implementation meet the requirement?
+*   [ ] **Readability:** Is the code clean, idiomatic, and well-commented?
+*   [ ] **Security Audit:** Are inputs sanitized? Are secrets handled correctly?
+*   [ ] **Badge Compliance:** Are the changes reflected in the expected CI/CD outcomes?
+*   [ ] **Documentation:** Is the system operating manual (README) accurate?
 
-### **1. Identity & Prime Directive**
+**Reviewer Notes:**
 
-*   **Role:** Senior Principal Software Architect, Master Technical Copywriter.
-*   **Context:** December 2025 (building for 2026 standards).
-*   **Output Standard:** EXECUTION-ONLY. No plans, only executed code, updated docs, and applied fixes.
-*   **Philosophy:** "Zero-Defect, High-Velocity, Future-Proof."
+---
 
-### **2. Input Processing & Cognition**
-
-*   **Semantic Correction:** Infer technical intent; do not execute literal typos. SSOT is `README.md`.
-*   **Mandatory MCP Instrumentation:** Use `linkup`/`brave` for December 2025 industry standards, security threats, and 2026 UI trends. Use `docfork` to verify external API signatures. Engage `clear-thought-two` for complex flows.
-
-### **3. Context-Aware Apex Tech Stacks (Late 2025 Standards)**
-
-*   **Project Type:** Browser Extension (JavaScript/TypeScript).
-*   **Stack:** 
-    *   **Language:** JavaScript (ESNext) or TypeScript.
-    *   **Bundler/Framework:** Vite 7 (Rolldown).
-    *   **Extension Framework:** WXT (Web Extension Toolkit) or Manifest V3 compliant structure.
-    *   **Styling:** TailwindCSS v4 (PostCSS).
-    *   **Architecture:** Feature-Sliced Design (FSD) principles adapted for extensions.
-*   **AI Integration:** Google Gemini API (`gemini-3-pro` default). Modular design, clear API contracts, robust error handling.
-*   **Linting/Formatting:** Biome (Ultra-fast, unified linter and formatter).
-*   **Testing:** Vitest (Unit & Integration), Playwright (End-to-End).
-
-### **4. Apex Naming Convention (Star Velocity Engine)**
-
-*   **Formula:** `<Product-Name>-<Primary-Function>-<Platform>-<Type>`.
-*   **Format:** `Title-Case-With-Hyphens`.
-*   **Repo Name:** `ZenRead-AI-Reader-Mode-And-TTS-Browser-Extension`.
-
-### **5. README Replication Protocol (Ultimate Artifact)**
-
-*   **Sections:** Visual Authority (Banner, Badges), Structural Clarity (BLUF, Architecture, TOC), AI Agent Directives, Development Standards.
-*   **Badges:** `flat-square` style, user `chirag127`, required: Build Status, Coverage, Tech Stack, Lint/Format, License, GitHub Stars.
-
-### **6. Testing & Verification Protocol**
-
-*   **Unit Tests:** Cover individual functions and modules. Use Vitest.
-*   **Integration Tests:** Verify interactions between components and external services (mocked APIs).
-*   **E2E Tests:** Simulate user interaction in a browser environment using Playwright. Focus on core user flows.
-*   **Linting & Formatting:** Ensure compliance with Biome rules before commit.
-*   **Build Verification:** All code must pass the CI pipeline. 
-
-</details>
-
---- 
-
-## ✅ Checklist
-
-*   [ ] My code adheres to the project's coding standards (as defined by Biome and general best practices).
-*   [ ] I have added/updated tests that cover my changes.
-*   [ ] All new and existing relevant documentation has been updated.
-*   [ ] My code passes all CI checks (linting, testing, building).
-*   [ ] I have considered potential security implications of my changes.
-*   [ ] My changes do not introduce any regressions.
-*   [ ] This PR is ready to be merged.
-
---- 
-
-## ⚠️ Notes for Reviewers
-
-*   Any specific areas you'd like reviewers to focus on?
-*   Are there any potential edge cases or complex logic that needs extra attention?
-*   Does this PR require specific environment setup or considerations for testing?
+*This repository operates under the Apex Technical Authority standard. Submissions must aim for future-proof, zero-defect quality.*
